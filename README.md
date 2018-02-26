@@ -1,3 +1,0 @@
-# Team8
-For members of Team 8 and Dr. Stol
-And whoever decides to look up 115335711 on Git Hub I guess...
