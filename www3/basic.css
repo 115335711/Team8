@@ -1,0 +1,143 @@
+/*General*/
+
+:root {
+	/*set variables for colours that will be used frequently*/
+	--bg-color: #000000;
+	--mn-color: #343434;
+	--txt-color: #D4AF37;
+	--mnu-color: #000000;
+	--alt-mnu-color: #228B22;
+}
+
+html {
+	background-color: var(--mn-color);
+}
+
+h1, h2 {
+	color: var(--alt-mnu-color);
+}
+
+p, ul {
+	color: var(--txt-color);
+	text-align: justify;
+}
+
+canvas {
+	width: 640px;
+	height: 480px;
+}
+
+#recv, #send {
+	resize: none;
+	outline: none;
+	background-color: var(--txt-color);
+	color: var(--bg-color);
+}
+
+/*Menu Related*/
+
+#menu {
+	background-color: var(--mnu-color);
+	/*keeps the menu fixed and centered and makes it longer for an aesthetically pleasing experience */
+	position: fixed;
+	left: 15%;
+	right: 15%;
+}
+
+.menu {
+	width: 125px;
+	height: 50px;
+	float: left; /*eliminates pixel issue*/
+    display: inline-block; /*keeps the menus next to one another*/
+}
+
+.menu:hover .content {
+    display: block; /*creates the drop-down effect*/
+}
+
+.menu-button{
+    display: block; /*increases the click-able area for the button*/
+    color: var(--txt-color);
+	font-size: 15px;
+	text-align: center;
+	line-height: 50px; /*must be same as the menu height to keep the text in the middle*/
+    text-decoration: none;
+}
+
+.button {
+	color: var(--txt-color);
+	background-color: var(--mnu-color);
+    font-size: 15px;
+	width: 125px;
+	height: 50px;
+	text-align: center;
+    border: none; /*acceptable in CSS but not in the US*/
+}
+
+.menu:hover .button, .content a:hover {
+    background-color: var(--alt-mnu-color);
+}
+
+.content {
+    display: none;
+    background-color: var(--mnu-color);
+    font-size: 15px;
+    position: absolute;
+}
+
+.content a {
+    display: block;
+    color: var(--txt-color);
+	font-size: 15px;
+	width: 125px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px; /*must be same as height to keep the text in the middle*/
+    text-decoration: none;
+}
+/*Form Related*/
+
+.outerDiv {
+	color: var(--txt-color);
+}
+
+.middleDiv {
+    background-color: var(--bg-color);
+	width:300px;
+	padding: 30px;
+}
+
+.innerDiv {
+	text-align: center;
+}
+
+label {
+	white-space: pre;
+}
+
+/*Page Segmentation Related*/
+
+#left, #middle, #right {
+	height: 100%;
+	top: 0px;
+}
+
+#left, #right {
+	width: 12%;
+	background-color: var(--bg-color);
+	position: fixed; /*keeps the borders in place*/
+}
+
+#left {
+	left: 0px;
+}
+
+#middle {
+	left: 15%;
+	right: 15%;
+	position: absolute; /*makes the entire page scrollable*/
+}
+
+#right {
+	right: 0px;
+}
