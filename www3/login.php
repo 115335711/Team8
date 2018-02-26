@@ -33,8 +33,9 @@
 				$date_diff = $row['dateDiff'];
 				//give the user 50 currency for every day since his/her last log in and update his/her last log in date
 				$extra_money = $date_diff * 50;
-				$sql_update = "UPDATE details SET balance = balance + '$extra_money', loginDate = '$date' WHERE username = '$myusername'";
+				$sql_update = "UPDATE details SET balance = balance + '$extra_money', loginDate = '$date' WHERE username = '$username'";
 				$result = mysqli_query($db, $sql_update);
+				$_SESSION['user_balance'] += $extra_money;
 			}
 			echo "<script type='text/javascript'>window.location.replace('index.php');</script>";
 		}
