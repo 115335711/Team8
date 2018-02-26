@@ -1,8 +1,8 @@
 <?php
-   include("config.php");
-   include("basic.php");
-   HTML_start('Registrater');
-   if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	include("config.php");
+	include("basic.php");
+	HTML_start('Registrater');
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		//get the username and the password, sent from the form, and see if the username is taken by querying it against the table in the database
 		$myusername = mysqli_real_escape_string($db,$_POST['username']);
 		$mypassword = mysqli_real_escape_string($db,$_POST['password']);
