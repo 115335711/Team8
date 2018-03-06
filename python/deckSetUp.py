@@ -31,18 +31,18 @@ class Deck(object):
         return string
 
     def size(self):
-        """Returns the size of the deck"""
+        """Returns the size of the deck."""
         return self._size
 
     def add(self, card):
-        """Adds 'card' to the deck if it's a Card type object"""
+        """Adds 'card' to the deck if it's a Card type object."""
         if isinstance(card, Card):
             self._body.append(card)
             self._size += 1
         return
 
     def rem(self):
-        """Removes the last card from the deck and returns it"""
+        """Removes the last card from the deck and returns it."""
         if self._size > 0:
             self._size -= 1
             return self._body.pop()
@@ -50,13 +50,13 @@ class Deck(object):
             return
 
     def shuffle(self, n):
-        """Shulles the deck 'n' times"""
+        """Shuffles the deck 'n' times."""
         for i in range(n):
             shuffle(self._body)
         return
 
 def Generator(deckNum, shflNum):
-    """Creates 'deckNum' of decks, combines them into one, shuffles it 'shflNum' times and returns it"""
+    """Creates 'deckNum' number of decks, combines them into one, shuffles it 'shflNum' number times and returns it."""
     cardKins = ["Hearts", "Diamonds", "Spades", "Clubs"]
     cardNums = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"]
     cardVals = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "10", "10", "10"]
