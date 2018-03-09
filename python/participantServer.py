@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from socket import *
+import shelve
 
 class Server(object):
 
@@ -23,6 +24,18 @@ class Server(object):
                     if message[1] == "ctrl":
                         if message[2] == "stop":
                             self.close()
+                        else:
+                            #Pickle the player's info
+                            info = eval(str(message[2])) #[1, 0|1, 0|1, x, 0|x, 0|x]
+                            db = shelve.open("userDB")
+                            player = db[message[0]] #[gamesPlayed, #Won, #Lost, $Available, $Won, $Lost]
+                            for i in range(len(player)):
+                                if i != 3:
+                                    player[i] += info[i]
+                                else:
+                                    player[i] = info[i]
+                            db[message[0]] = player
+                            db.close()
                     elif mode == "chat" and message[1] == "chat":
                         print("<%s>: %s" % (message[0], message[2]), end="")
                     elif mode == "cmmd" and message[1] == "cmmd":
