@@ -1,0 +1,116 @@
+/*General*/
+
+:root {
+	--bg-color: #000000;
+	--mn-color: #343434;
+	--txt-color: #D4AF37;
+	--mnu-color: #000000;
+	--alt-mnu-color: #228B22;
+}
+
+html {
+	background-color: var(--mn-color);
+}
+
+h1, p {
+	color: var(--txt-color);
+}
+
+canvas {
+	width: 640px;
+	height: 480px;
+	border: 3px solid black;
+	/*centers the canvas*/
+    display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*Menu Related*/
+
+#menu {
+	background-color: var(--mnu-color);
+	/*keeps the menu fixed and centered and makes it longer for an aesthetically pleasing experience */
+	position: fixed;
+	left: 15%;
+	right: 15%;
+}
+
+.menu {
+	width: 125px;
+	height: 50px;
+	float: left; /*eliminates pixel issue*/
+    display: inline-block; /*keeps the menus next to one another*/
+}
+
+.menu:hover .content {
+    display: block; /*creates the drop-down effect*/
+}
+
+.menu-button{
+    display: block; /*increases the click-able area for the button*/
+    color: var(--txt-color);
+	font-size: 15px;
+	text-align: center;
+	line-height: 50px; /*must be same as the menu height to keep the text in the middle*/
+    text-decoration: none;
+}
+
+.button {
+	color: var(--txt-color);
+	background-color: var(--mnu-color);
+    font-size: 15px;
+	width: 125px;
+	height: 50px;
+	text-align: center;
+    border: none; /*acceptable in CSS but not in the US*/
+}
+
+.menu:hover .button, .content a:hover {
+    background-color: var(--alt-mnu-color);
+}
+
+.content {
+    display: none;
+    background-color: var(--mnu-color);
+    font-size: 15px;
+    position: absolute;
+}
+
+.content a {
+    display: block;
+    color: var(--txt-color);
+	font-size: 15px;
+	width: 125px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px; /*must be same as height to keep the text in the middle*/
+    text-decoration: none;
+}
+
+/*Page Segmentation Related*/
+
+#left, #middle, #right {
+	height: 100%;
+	top: 0px;
+}
+
+#left, #right {
+	width: 12%;
+	background-color: var(--bg-color);
+	position: fixed; /*keeps the borders in place*/
+}
+
+#left {
+	left: 0px;
+}
+
+#middle {
+	left: 15%;
+	right: 15%;
+	position: absolute; /*makes the entire page scrollable*/
+}
+
+#right {
+	right: 0px;
+}
